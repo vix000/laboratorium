@@ -1,0 +1,47 @@
+//Zadanie1.
+//Celem programu jest wyznaczenie stopnia grafu
+//oraz stopnia wszystkich jego wierzcchołków
+//Autor: Bartłomiej Pysiak, nr indeksu: 251191
+#include <iostream>
+#define MAKS_WIERZCH 50  // maksymalna ilość wierzchołków w grafie
+using namespace std;
+int main()
+{
+  int wmax,ile_kr, w1,w2,suma, stG; //deklaracje zmiennych
+  int macierz[MAKS_WIERZCH][MAKS_WIERZCH]; // macierz sąsiedztwa
+
+  for(int i = 0; i < MAKS_WIERZCH; i++) // wypełnienie macierzy zerami
+    for(int j = 0; j < MAKS_WIERZCH; j++)
+        macierz[i][j] = 0;
+
+  wmax = 0; //ogranicznik dający gwarancję uzyskania
+            //macierzy wymiaru takiego jak największy wierzchołek
+  suma=stG=0;
+  cout<<"Podaj liczbe krawedzi grafu:";
+  cin >> ile_kr; // odczytujemy ilość krawędzi
+  for(int i = 0; i < ile_kr; i++)
+  {
+    cout<<"Podaj polaczone ze soba wierzcholki:";
+    cin >> w1 >> w2; // odczytujemy krawędź
+    wmax = (w1 > wmax) ? w1 : wmax;
+    wmax = (w2 > wmax) ? w2 : wmax;
+    macierz[w1-1][w2-1] = 1;
+    macierz[w2-1][w1-1] = 1;
+  }
+  cout << endl;
+  for(int i = 0; i < wmax; i++)
+  {
+    cout<<"Wierzcholek "<<i+1<<":        ";
+    for(int j = 0; j < wmax; j++)
+    {
+        if(macierz[i][j]==1) suma+=1;
+        cout<<macierz[i][j] << " ";
+    }
+    cout<<"        Stopien: "<<suma;
+    stG = (suma > stG) ? suma : stG;
+    suma=0;
+    cout<<endl;
+  }
+  cout<<"\n\nStopien grafu: "<<stG;
+  return 0;
+}
