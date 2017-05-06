@@ -25,21 +25,24 @@ int main()
     cin >> w1 >> w2; // odczytujemy krawędź
     wmax = (w1 > wmax) ? w1 : wmax;
     wmax = (w2 > wmax) ? w2 : wmax;
-    macierz[w1-1][w2-1] = 1;
-    macierz[w2-1][w1-1] = 1;
+    macierz[w1-1][w2-1] += 1;
+    macierz[w2-1][w1-1] += 1;
   }
   cout << endl;
+  suma=0;
   for(int i = 0; i < wmax; i++)
   {
     cout<<"Wierzcholek "<<i+1<<":        ";
+    suma=0; // zerowana przy kazdym wypisaniu wierzcholka
     for(int j = 0; j < wmax; j++)
     {
-        if(macierz[i][j]==1) suma+=1;
+        suma+=macierz[i][j];
+       // if(macierz[i][j]==1) suma+=1;
         cout<<macierz[i][j] << " ";
     }
     cout<<"        Stopien: "<<suma;
     stG = (suma > stG) ? suma : stG;
-    suma=0;
+
     cout<<endl;
   }
   cout<<"\n\nStopien grafu: "<<stG;
