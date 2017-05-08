@@ -1,3 +1,6 @@
+//Zadanie 3.
+//Czy podany graf jest dwudzielny? jesli jest, wypisz dwa rozlaczne podzbiory - partycje dwudzielnosci.
+//Autor: Bartlomiej Pysiak, nr indeksu 251191
 #include <vector>
 #include <list>
 #include <queue>
