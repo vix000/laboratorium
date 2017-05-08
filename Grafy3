@@ -19,7 +19,7 @@ int main()
     cout<<"\n\nWCZYTAJ LICZBE WIERZCHOLKOW I LICZBE KRAWEDZI (SEPARATOR - SPACJA):\n";
     cin>>ile_w>>ile_k;
     moj_graf.resize(ile_w);
-    cout<<"\nWCZYTAJ KTORY WIERZCHOLEK JEST POLACZONY Z KTORYM.\n";
+    cout<<"\nWCZYTAJ KTORY WIERZCHOLEK JEST POLACZONY Z KTORYM (SEPARATOR - SPACJA).\n";
     for (int i=0; i<ile_k; ++i)
     {
         cout<<"KRAWEDZ NR "<<i+1<<" : ";
