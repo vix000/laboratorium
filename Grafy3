@@ -1,0 +1,91 @@
+#include <vector>
+#include <list>
+#include <queue>
+#include <cstdlib> // exit()
+#include <iostream>
+using namespace std;
+vector <vector<int> > moj_graf;
+vector<int> skladowe1;
+vector<int> skladowe2;
+int ile_w, ile_k;
+void przeszukanie();
+int main()
+{
+    cout<<"PROGRAM SPRAWDZAJACY CZY WCZYTANY GRAF JEST DWUDZIELNY.\nJEZELI JEST, PROGRAM WYPISUJE DWA ROZLACZNE PODZBIORY - PARTYCJE DWUDZIELNOSCI\n";
+    int para1, para2;
+    cout<<"\n\nWCZYTAJ LICZBE WIERZCHOLKOW I LICZBE KRAWEDZI (SEPARATOR - SPACJA):\n";
+    cin>>ile_w>>ile_k;
+    moj_graf.resize(ile_w);
+    cout<<"\nWCZYTAJ KTORY WIERZCHOLEK JEST POLACZONY Z KTORYM.\n";
+    for (int i=0; i<ile_k; ++i)
+    {
+        cout<<"KRAWEDZ NR "<<i+1<<" : ";
+        cin>>para1>>para2;
+        --para1;
+        --para2;
+        moj_graf[para1].push_back(para2);
+        moj_graf[para2].push_back(para1);
+    }
+    if (ile_k==0)
+    {
+        cout<<ile_w<< "GRAF PUSTY/ZLOZONY Z SAMYCH WIERZCHOLKOW JEST ZAWSZE GRAFEM DWUDZIELNYM.";
+        return 0;
+    }
+    przeszukanie();
+    //cout<<endl<<skladowe.size();
+    return 0;
+}
+
+
+void przeszukanie()
+{
+    int Color[ile_w];
+    for(int i=0; i<ile_w; ++i) Color[i]=0;
+    queue<int> kolejka;
+    int V;
+    for(int i=0; i<ile_w; ++i)
+    {
+        if(Color[i]==0)
+        {
+                kolejka.push(i);
+                Color[i]=1;
+                while(!kolejka.empty())
+                {
+                    V=kolejka.front();
+                    kolejka.pop();
+                    for(int j=0; j<moj_graf[V].size(); ++j)
+                    {
+                        if(Color[moj_graf[V][j]]==0)
+                        {
+                            Color[moj_graf[V][j]]=(Color[V] == 1 ? 2 : 1);   // jezeli sasiednie wierzcholki sa inaczej pokolorowane
+                            kolejka.push(moj_graf[V][j]);
+                        }
+                    }
+                }
+        }
+    }
+    for(int i=0; i<ile_w; ++i) //pętka wrzucająca na vectory wierzcholki z odpowiednimi kolorami
+    {
+        if(Color[i]==1)
+            skladowe1.push_back(i);
+        if(Color[i]==2)
+            skladowe2.push_back(i);
+    }
+    for(int i=0; i<ile_w; ++i)
+    {
+        for(int j=0; j<moj_graf[i].size(); ++j)
+        {
+            if(Color[i]==Color[moj_graf[i][j]])
+            {
+                cout << "\nGraf nie jest dwudzielny. \n";
+                exit(0);
+            }
+        }
+    }
+    cout << "\nGRAF JEST DWUDZIELNY.\nJEGO ROZLACZNE PODZBIORY TO:\n\n";
+    cout<<"PODZBIOR NR 1:\n";
+    for(vector<int>::iterator i=skladowe1.begin(); i!=skladowe1.end(); ++i) cout<<*i+1<<", "; //petla od poczatku vectora do konca
+    cout<<endl<<endl;
+    cout<<"PODZBIOR NR 2:\n";
+    for(vector<int>::iterator i=skladowe2.begin(); i!=skladowe2.end(); ++i) cout<<*i+1<<", "; //petla od poczatku vectora do konca
+}
