@@ -19,7 +19,7 @@ int main()
     cout<<"\n\nWCZYTAJ LICZBE WIERZCHOLKOW I LICZBE KRAWEDZI (SEPARATOR - SPACJA):\n";
     cin>>ile_w>>ile_k;
     moj_graf.resize(ile_w);
-    cout<<"\nWCZYTAJ KTORY WIERZCHOLEK JEST POLACZONY Z KTORYM (SEPARATOR - SPACJA).\n";
+    cout<<"\nWCZYTAJ KTORY WIERZCHOLEK JEST POLACZONY Z KTORYM\nWIERZCHOLKI NUMEROWANE SA OD 1 (SEPARATOR - SPACJA).\n\n";
     for (int i=0; i<ile_k; ++i)
     {
         cout<<"KRAWEDZ NR "<<i+1<<" : ";
@@ -67,7 +67,7 @@ void przeszukanie()
                 }
         }
     }
-    for(int i=0; i<ile_w; ++i) //pętka wrzucająca na vectory wierzcholki z odpowiednimi kolorami
+    for(int i=0; i<ile_w; ++i) //pêtka wrzucaj¹ca na vectory wierzcholki z odpowiednimi kolorami
     {
         if(Color[i]==1)
             skladowe1.push_back(i);
