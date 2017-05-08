@@ -15,7 +15,7 @@ void przeszukanie();
 int main()
 {
     cout<<"PROGRAM SPRAWDZAJACY CZY WCZYTANY GRAF JEST DWUDZIELNY.\nJEZELI JEST, PROGRAM WYPISUJE DWA ROZLACZNE PODZBIORY - PARTYCJE DWUDZIELNOSCI\n";
-    int para1, para2;
+    int wierzcholek1, wierzcholek2;
     cout<<"\n\nWCZYTAJ LICZBE WIERZCHOLKOW I LICZBE KRAWEDZI (SEPARATOR - SPACJA):\n";
     cin>>ile_w>>ile_k;
     moj_graf.resize(ile_w);
@@ -23,11 +23,11 @@ int main()
     for (int i=0; i<ile_k; ++i)
     {
         cout<<"KRAWEDZ NR "<<i+1<<" : ";
-        cin>>para1>>para2;
-        --para1;
-        --para2;
-        moj_graf[para1].push_back(para2);
-        moj_graf[para2].push_back(para1);
+        cin>>wierzcholek1>>wierzcholek2;
+        --wierzcholek1;
+        --wierzcholek2;
+        moj_graf[wierzcholek1].push_back(wierzcholek2);
+        moj_graf[wierzcholek2].push_back(wierzcholek1);
     }
     if (ile_k==0)
     {
