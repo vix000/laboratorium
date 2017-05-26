@@ -1,0 +1,52 @@
+//
+#include<stdio.h>
+
+int G[10][10];
+int kolory[10];
+int m, v1, v2, i, n, j, a, b;
+int ile_w;
+int ile_k;
+void Gen_Col_Value(int, int);
+void Gr_coloring(int, int);
+int main()
+{
+ printf("\nWczytaj liczbe wierzcholkow i liczbe krawedzi:");
+ scanf("%d%d", &n, &ile_k);
+ m = n-1;
+ printf("\nWczytaj polaczone ze soba wierzcholki. Separator - spacja\n\n");
+ for (i=1; i<=ile_k; i++)
+ {
+  printf("Krawedz %d: ", i, "\n");
+  scanf("%d%d", &v1, &v2);
+   G[v1][v2] = G[v2][v1] = 1;
+   printf("\n");
+ }
+ Gr_coloring(1, n);
+ printf("\nWybrane pokolorowanie:\n");
+  for(i=1; i<=n; i++)
+    printf("\n Wierzcholek %d = %d", i, kolory[i]);
+ return 0;
+}
+void Gen_Col_Value(int k, int n)
+{
+ while(1)
+ {
+  a = kolory[k]+1;
+  b = m+1;
+  kolory[k] = a%b;
+  if(kolory[k] == 0) return;
+  for(j=1; j<=n; j++)
+  {
+   if(G[k][j] && kolory[k]==kolory[j])
+     break;
+  }
+  if(j==n+1) return;
+   }
+}
+void Gr_coloring(int k, int n)
+{
+  Gen_Col_Value(k, n);
+  if(kolory[k]==0) return;
+  if(k==n)  return;
+  else Gr_coloring(k+1, n);
+}
