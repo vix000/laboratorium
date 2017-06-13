@@ -31,7 +31,7 @@ CREATE TABLE Sushi_Master (
 	CONSTRAINT ID_PK4 PRIMARY KEY(ID)
 );
 
-CREATE TABLE Zamówienie (
+CREATE TABLE Zamówienie1 (
 	Numer_zamówienia SERIAL NOT NULL,
 	Ilość_zestawów INT NOT NULL,
 	CONSTRAINT ID_PK5 PRIMARY KEY(Numer_zamówienia)

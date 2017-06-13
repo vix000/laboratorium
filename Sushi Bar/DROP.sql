@@ -12,7 +12,7 @@ DROP TABLE Sushi_Master;
 DROP TABLE Przyjecie_zamówienia;
 DROP TABLE Złożenie_zamówienia;
 DROP TABLE Co_zawiera_zamówienie;
-DROP TABLE Zamówienie;
+DROP TABLE Zamówienie1;
 DROP TABLE Dostarczenie;
 DROP TABLE Kelner;
 DROP TABLE placenie;
