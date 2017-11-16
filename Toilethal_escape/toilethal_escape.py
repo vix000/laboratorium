@@ -1,4 +1,5 @@
 #Gra polegająca na ucieczce przed zabójczym papierem toaletowym
+#Bartłomiej Pysiak
 
 from livewires import games, color
 import random
