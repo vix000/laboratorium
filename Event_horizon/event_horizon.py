@@ -1,8 +1,6 @@
 #Event Horizon
-#Gra na projekt z informatyki
-#Demonstruje uzycie pakietów livewires i pygame
 #Obrazki, animacje - wlasne
-#Muzyka - VHS Dreams = Vice Point
+#Muzyka - VHS Dreams = Vice Point ( wyłączona do testów )
 #Bartłomiej Pysiak
 import math, random
 from livewires import games, color
