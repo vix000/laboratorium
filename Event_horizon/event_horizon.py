@@ -1,6 +1,7 @@
 #Event Horizon
 #Obrazki, animacje - wlasne
 #Muzyka - VHS Dreams = Vice Point ( wyłączona do testów )
+#Korzystam z modułu livewires obsługującego grafikę
 #Bartłomiej Pysiak
 import math, random
 from livewires import games, color
