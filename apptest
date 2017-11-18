@@ -1,4 +1,5 @@
-#classy calc
+#Project in progress: management of various data types and structures, handy functions and clever solutions - more yet to come
+#Autor: Bartłomiej Pysiak
 
 from functools import reduce
 
@@ -7,79 +8,38 @@ def funkcja(x):
   return x*2
 x = funkcja(5)
 
-some_list = [0]
-
-while True:
-  try:
-    ile = int(input("Ile miejsc w liscie?"))
-    break
-  except ValueError as e:
-    print("Err: ", e)
-    continue
-  
-for i in range(ile):
-  x = 
+the_list = []
+def fill_list(some_list):
+  while True:
+    try:
+      ile = int(input("Ile pozycji w liscie ?"))
+      break
+    except ValueError as e:
+      print("Err: ", e)
+      continue
+  for i in range(ile):
+    try:
+      x = int(input("Podaj liczbę: "))
+      the_list.append(x)
+    except ValueError as e:
+      print("Err: ", e)
+      continue
+  return the_list
+    
+print(the_list)
+fill_list(list)
+print(the_list)
 
 class Find_Max():
   def __init__(self, lista):
     self.lista = lista
-    reduce(lambda a,b: a if a>b else b, lista)
+    print("Max value: ",reduce(lambda a,b: a if a>b else b, lista))
 
 class Find_Min():
   def __init__(self, lista):
     self.lista = lista
-    reduce(lambda a,b: a if a<b else b, lista)
+    print("Min value: ",reduce(lambda a,b: a if a<b else b, lista))
     
-list_find_max = Find_Max(some_list)
-list_find_min = Find_Min(some_list)
 
-class Display():
-  def __init__(self, x ):
-    self.x = x
-  
-  def print_something(self, x):
-    print(x)
-    
-  def return_square(x):
-    return x*2
-    
-    
-class Person():
-  def __init__(self, first, last):
-    self.first = first
-    self.last = last
-    
-  def __str__(self):
-    return self.first + " " + self.last
-    
-dude = Person("Mark", "Twain")
-
-class Employee(Person):
-  def __init__(self, first, last, number):
-    super().__init__(first, last)
-    self.number = number
-    
-  def print_emp_number(self):
-    print(self.number)
-
-pracownik = Employee("K", "O", 5)
-#pracownik.print_emp_number()
-
-class Menu():
-  def __init__(self):
-    pass
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
+list_find_max = Find_Max(the_list)
+list_find_min = Find_Min(the_list)
