@@ -1,7 +1,6 @@
-//Zadanie2.
 //Czy podany graf jest eulerowski?
 //Kolejnosc wierzcholkow umieszczanych w grafie ma znaczenie.
-//Autor: Bartlomiej Pysiak, nr indeksu 251191
+//Autor: Bartlomiej Pysiak
 #include <stack>
 #include <vector>
 #include <iostream>
