@@ -1,4 +1,5 @@
-//
+//Kolorowanie grafu
+//Autor: Bartłomiej Pysiak
 #include<stdio.h>
 
 int G[10][10];
