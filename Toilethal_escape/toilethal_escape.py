@@ -1,4 +1,5 @@
 #Gra polegająca na ucieczce przed zabójczym papierem toaletowym
+#Korzystam z modułu livewires obsługującego grafikę
 #Bartłomiej Pysiak
 
 from livewires import games, color
