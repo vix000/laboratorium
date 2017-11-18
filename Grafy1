@@ -1,7 +1,6 @@
-//Zadanie1.
 //Celem programu jest wyznaczenie stopnia grafu
 //oraz stopnia wszystkich jego wierzcchołków
-//Autor: Bartłomiej Pysiak, nr indeksu: 251191
+//Autor: Bartłomiej Pysiak
 #include <iostream>
 #define MAKS_WIERZCH 50  // maksymalna ilość wierzchołków w grafie
 using namespace std;
