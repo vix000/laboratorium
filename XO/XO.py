@@ -123,7 +123,7 @@ def computer_turn(the_board, player, computer):
     
   for i in TACTICAL_POSITIONS:
     if i in avaiable_positions(the_board):
-      print(i)
+      print("Computer move:", i)
       return i
 
 def pass_turn(the_turn):
