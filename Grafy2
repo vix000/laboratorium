@@ -10,7 +10,7 @@ bool tu_bylem[MAKS];
 vector<int> graf[MAKS];
 vector<int> wynik;
 int byc[MAKS][MAKS];
-int wypisz_cykl(int v) //funckaj wrzuca na vector wynik kolejne przejscia drzewa graf
+int wypisz_cykl(int v)
 {
     while(!graf[v].empty())
     {
