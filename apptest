@@ -3,7 +3,48 @@
 
 from functools import reduce
 
-from functools import reduce
+def greet():
+  print(
+    """
+    Welcome in this program!
+    
+    What do you want me to do? . . .
+    
+    1 - Numbers
+    2 - Lists
+    3 - Functions
+    
+    """
+    )
+    
+def menu_numbers():
+  print("Here you can do operations on numbers.\n")
+  try:
+    number = int(input("Input number: "))
+  except ValueError as e:
+    print("Error: ", e)
+    
+def exit():
+  print("Shutting down.")
+  
+  
+def menu():
+  """Uses dictionaries to represent option menu"""
+  greet()
+  options = {
+             1:menu_numbers,
+             #2:menu_lists,
+             #3:menu_math_functions
+             4:menu_exit
+            }
+  while True:
+    try:
+      choice = int(input("Your choice?"))
+      break
+    except ValueError as e:
+      print("Error: ", e)
+      continue
+  options[choice]()
 
 def return_a_list():
   some_list = []
@@ -18,7 +59,20 @@ def return_a_list():
       some_list = []
       continue
     return some_list
-    
+
+
+def check_if_prime(num):
+  if num > 1:
+    for i in range(2, num):
+      if num%i==0:
+        return False
+    else:
+      print(num)
+  else:
+    return False
+
+#for item in some_list:
+#  check_if_prime(item)
 
 
 #example_list =return_a_list()
@@ -34,7 +88,8 @@ class Find_Min():
     self.list_arg = list_arg
     print("Min value: ",reduce(lambda a,b: a if a<b else b, list_arg))
 
-
-
-
+def main():
+  menu()
+  
+main()
 
