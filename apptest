@@ -3,43 +3,38 @@
 
 from functools import reduce
 
-#remember:
-def funkcja(x):
-  return x*2
-x = funkcja(5)
+from functools import reduce
 
-the_list = []
-def fill_list(some_list):
+def return_a_list():
+  some_list = []
   while True:
     try:
-      ile = int(input("Ile pozycji w liscie ?"))
-      break
+      number_of_elements = int(input("Specify how many elements of a list: "))
+      for i in range(number_of_elements):
+        list_item = int(input("Enter an element: "))
+        some_list.append(list_item)
     except ValueError as e:
       print("Err: ", e)
+      some_list = []
       continue
-  for i in range(ile):
-    try:
-      x = int(input("Podaj liczbę: "))
-      the_list.append(x)
-    except ValueError as e:
-      print("Err: ", e)
-      continue
-  return the_list
+    return some_list
     
-print(the_list)
-fill_list(list)
-print(the_list)
+
+
+#example_list =return_a_list()
+#print(example_list)
 
 class Find_Max():
-  def __init__(self, lista):
-    self.lista = lista
-    print("Max value: ",reduce(lambda a,b: a if a>b else b, lista))
+  def __init__(self, list_arg):
+    self.list_arg = list_arg
+    print("Max value: ",reduce(lambda a,b: a if a>b else b, list_arg))
 
 class Find_Min():
-  def __init__(self, lista):
-    self.lista = lista
-    print("Min value: ",reduce(lambda a,b: a if a<b else b, lista))
-    
+  def __init__(self, list_arg):
+    self.list_arg = list_arg
+    print("Min value: ",reduce(lambda a,b: a if a<b else b, list_arg))
 
-list_find_max = Find_Max(the_list)
-list_find_min = Find_Min(the_list)
+
+
+
+
