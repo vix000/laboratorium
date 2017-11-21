@@ -66,7 +66,6 @@ def main():
   print("Result list (size of m):")
   my_list = create_empty_list()
   print("This is your unhashed collection: ",unhashed_list)
-  print("This is the list that will contain your hashed elements: ", my_list)
   my_list = hashing(unhashed_list, my_list)
-  print("Your hashed list is: ", my_list)
+  print("This is your hashed list: ", my_list)
 main()
