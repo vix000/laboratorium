@@ -36,6 +36,7 @@ def input_number():
 def menu_numbers():
   print("Here you can do operations on numbers.\n")
   input_number()
+  #...
     
 def menu_exit():
   print("Shutting down.")
