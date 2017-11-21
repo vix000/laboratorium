@@ -38,7 +38,6 @@ def create_empty_list():
   return my_list
   
 def hashing(unhashed_collection, my_list):
-  #linear_addressing = ((unhashed_collection[i])%len(my_list)+count)%len(my_list)
   hashed_list = my_list
   count = 0
   while True:
