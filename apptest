@@ -2,31 +2,44 @@
 #Autor: Bartłomiej Pysiak
 
 from functools import reduce
+import sys
 
 def greet():
   print(
     """
-    Welcome in this program!
-    
+    Welcome in this program!\n
     What do you want me to do? . . .
     
     1 - Numbers
     2 - Lists
     3 - Functions
+    4 - Exit
     
     """
     )
     
-def menu_numbers():
-  print("Here you can do operations on numbers.\n")
+def make_a_choice(choice):
+  while True:
+    try:
+      choice = int(input("Your choice?"))
+      return choice
+    except ValueError as e:
+      print("Error: ", e)
+      continue
+    
+def input_number():
   try:
     number = int(input("Input number: "))
   except ValueError as e:
     print("Error: ", e)
     
-def exit():
+def menu_numbers():
+  print("Here you can do operations on numbers.\n")
+  input_number()
+    
+def menu_exit():
   print("Shutting down.")
-  
+  sys.exit()
   
 def menu():
   """Uses dictionaries to represent option menu"""
@@ -37,13 +50,8 @@ def menu():
              #3:menu_math_functions
              4:menu_exit
             }
-  while True:
-    try:
-      choice = int(input("Your choice?"))
-      break
-    except ValueError as e:
-      print("Error: ", e)
-      continue
+  choice = None
+  choice = make_a_choice(choice)
   options[choice]()
 
 def return_a_list():
@@ -60,7 +68,6 @@ def return_a_list():
       continue
     return some_list
 
-
 def check_if_prime(num):
   if num > 1:
     for i in range(2, num):
@@ -70,10 +77,6 @@ def check_if_prime(num):
       print(num)
   else:
     return False
-
-#for item in some_list:
-#  check_if_prime(item)
-
 
 #example_list =return_a_list()
 #print(example_list)
@@ -90,6 +93,5 @@ class Find_Min():
 
 def main():
   menu()
-  
-main()
 
+main()
