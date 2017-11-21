@@ -1,11 +1,10 @@
-#Gra typu 'kółko i krzyżyk' - użytkownik gra przeciwko logice zaimplementowanej w programie
-#Decyzje komputera są uwarunkowane kombinacjami w grze dającymi zwycięstwo - to do nich komputer będzie dążył.
-#Gracz ma możliwość wyboru czy będzie zaczynał grę.
-#Przy użyciu wielkich liter zadeklarowane są stałe.
-
-#Bartłomiej Pysiak
-#---------------------------------------------------------------
-#Using globals - I have to find a better way!
+# Gra typu 'kółko i krzyżyk' - użytkownik gra przeciwko logice zaimplementowanej w programie
+# Decyzje komputera są uwarunkowane kombinacjami w grze dającymi zwycięstwo - to do nich komputer będzie dążył.
+# Gracz ma możliwość wyboru czy będzie zaczynał grę.
+# Przy użyciu wielkich liter zadeklarowane są stałe.
+# Bartłomiej Pysiak
+# ---------------------------------------------------------------
+# Using globals - I have to find a better way!
 X = "X"
 O = "O"
 EMPTY_POSITION = ''
