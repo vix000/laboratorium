@@ -61,8 +61,9 @@ def hashing(unhashed_collection, my_list):
     
 def main():
   greet() 
-  print("Unhashed collection: ")
+  print("Unhashed collection:")
   unhashed_list = create_unhashed_collection()
+  print("Result list (size of m):")
   my_list = create_empty_list()
   print("This is your unhashed collection: ",unhashed_list)
   print("This is the list that will contain your hashed elements: ", my_list)
