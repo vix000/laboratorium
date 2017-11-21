@@ -1,7 +1,7 @@
 # Program pyta użytkownika, ile elementów ma zawierać zbiór niezhashowanych kluczy.
 # Następnie prosi o podanie kluczy oraz o rozmiar listy
 # w której mają się znaleźć zhashowane klucze. 
-# Zwraca zhashowaną lishę wedługo hashowania z adresowaniem liniowym:
+# Zwraca zhashowaną listę według hashowania z adresowaniem liniowym:
 # h(k) = k mod m,  gdzie k - niezhashowany klucz, m = rozmiar listy.
 # Autor: Bartłomiej Pysiak
 
