@@ -1,13 +1,11 @@
-#Project in progress: management of various data types and structures, handy functions and clever solutions - more yet to come
-#Autor: Bartłomiej Pysiak
-
 from functools import reduce
 import sys
 
 def greet():
   print(
     """
-    Welcome in this program!\n
+    Welcome in this program!
+    
     What do you want me to do? . . .
     
     1 - Numbers
@@ -36,7 +34,6 @@ def input_number():
 def menu_numbers():
   print("Here you can do operations on numbers.\n")
   input_number()
-  #...
     
 def menu_exit():
   print("Shutting down.")
@@ -79,6 +76,9 @@ def check_if_prime(num):
   else:
     return False
 
+#for item in some_list:
+#  check_if_prime(item)
+
 #example_list =return_a_list()
 #print(example_list)
 
@@ -95,4 +95,5 @@ class Find_Min():
 def main():
   menu()
 
-main()
+if __name__ == "__main__":
+  main()
