@@ -2,6 +2,8 @@
 # Następnie prosi o podanie kluczy oraz o rozmiar listy
 # w której mają się znaleźć zhashowane klucze. 
 # Zwraca zhashowaną listę według hashowania z adresowaniem liniowym:
+# H(k) = (h(k) + count) mod m
+# h(k) - funkcja hashująca
 # h(k) = k mod m,  gdzie k - niezhashowany klucz, m = rozmiar listy.
 # Autor: Bartłomiej Pysiak
 
