@@ -1,8 +1,9 @@
-def greet():
-  """
-  Welcome in ListHash! Here you can hash your lists.\n
-  """
+#Program pyta użytkownika, ile elementów ma zawierać zbiór niezhashowanych kluczy. Następnie prosi o podanie kluczy oraz o rozmiar listy w której mają się znaleźć zhashowane klucze. Zwraca zhashowaną lishę wedługo hashowania z adresowaniem liniowym h(k) = k mod m gdzie m = rozmiar listy.
+#Autor: Bartłomiej Pysiak
 
+def greet():
+  print("Welcome in ListHash! Here you can hash your lists.\n")
+  
 def ask_how_many_elements():
   while True:
     try:
@@ -43,8 +44,9 @@ def hashing(unhashed_collection, my_list):
   while True:
     for i in range(len(unhashed_collection)):
       while True:
-        if hashed_list[((unhashed_collection[i])%len(my_list)+count)%len(my_list)] == None:
-          hashed_list[((unhashed_collection[i])%len(my_list)+count)%len(my_list)] = unhashed_collection[i]
+        linear_addressing = ((unhashed_collection[i])%len(my_list)+count)%len(my_list)
+        if hashed_list[linear_addressing] == None:
+          hashed_list[linear_addressing] = unhashed_collection[i]
           count = 0
           break
         else:
@@ -53,6 +55,7 @@ def hashing(unhashed_collection, my_list):
     return hashed_list
     
 def main():
+  greet() 
   print("Unhashed collection: ")
   unhashed_list = create_unhashed_collection()
   my_list = create_empty_list()
@@ -60,5 +63,4 @@ def main():
   print("This is the list that will contain your hashed elements: ", my_list)
   my_list = hashing(unhashed_list, my_list)
   print("Your hashed list is: ", my_list)
-  
 main()
