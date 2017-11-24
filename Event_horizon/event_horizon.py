@@ -313,7 +313,7 @@ class Game(object):
 
 
 def main():
-    astrocrash = Game()
-    astrocrash.play()
+    event_horizon = Game()
+    event_horizon.play()
 
 main()
